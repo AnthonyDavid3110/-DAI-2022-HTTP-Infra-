@@ -18,3 +18,4 @@ Nous avons décidé de travailler avec l'image PHP.
 Lancement du serveur docker :
 `$ docker run -d -p 9090:80 php:7.4-cli`
 
+Lancement du serveur en fond
