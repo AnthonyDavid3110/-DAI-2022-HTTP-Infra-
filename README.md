@@ -40,5 +40,24 @@ La commande pour créer l'image Docker et la suivante :
 
 Afin de facilier l'utilisation, nous avons créé un scripte `build-image` qui va créé l'image en la nommant "dai/apache_php".
 
+## 2.2 Etape 2
+### 2.2.1 Configuration
+1) 
+Docker file avec le contenue suivant :
+```
+FROM node:18.11.1
+
+COPY src /opt/app
+
+CMD ["node", "opt/app/index.js"]
+```
+Ce qui veut dire qu'on va vouloir utiliser la version 18.11.1 de Node (dernière version stable), qu'on va copier le contenu de src dans /opt/app du container et qu'au démarrage au veut effecteur les deux commande entre [] via un CMD.
+
+2) 
+On créé le fichier source et pour créer le contenu de ce dernier on le fait via `npm init`. On a paramétrer comme suit :
+<p align="center">
+    <img src="figures/npmInit.png" width="500" class="center"> 
+</p> 
+
 
 
