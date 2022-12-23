@@ -1,0 +1,1 @@
+docker run -d -p 9090:80 php:7.4-apache
