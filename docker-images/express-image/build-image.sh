@@ -1,1 +1,3 @@
-docker build -t dai/express_students .
+#!/bin/bash
+
+docker build -t dai/express_persons .

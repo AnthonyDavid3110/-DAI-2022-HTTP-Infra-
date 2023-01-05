@@ -1,0 +1,34 @@
+version: "3"
+
+services:
+  httpd-static:
+    image: dai/apache_php
+    restart: unless-stopped
+    ports: 
+      - 80
+    labels:
+      - "traefik.http.routers.apache_php.rule=Host(`localhost`)"
+    deploy:
+      replicas: 3
+
+  express-persons:
+    image: dai/express_persons
+    restart: unless-stopped
+    ports:
+      - 3000
+    labels:
+      - traefik.http.routers.express-server.rule=PathPrefix(`/api`)
+      - traefik.http.routers.express-server.middlewares=admin-stripprefix
+      - traefik.http.middlewares.admin-stripprefix.stripprefix.prefixes=/api
+    deploy:
+      replicas: 3
+
+  reverse-proxy:
+    image: traefik:v2.9
+    command: --api.insecure=true --providers.docker
+    ports:
+      - 80:80
+      - 8181:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
