@@ -7,7 +7,11 @@ services:
     ports: 
       - 80
     labels:
-      - "traefik.http.routers.apache_php.rule=Host(`localhost`)"
+      - traefik.http.routers.apache_php.rule=Host(`localhost`)
+      - traefik.http.services.whoami-service.loadBalancer.sticky.cookie=true
+      - traefik.http.services.whoami-service.loadBalancer.sticky.cookie.name=whoami_cookie_name
+    deploy:
+      replicas: 3
 
 
   express-persons:
@@ -19,6 +23,8 @@ services:
       - traefik.http.routers.express-server.rule=PathPrefix(`/api`)
       - traefik.http.routers.express-server.middlewares=admin-stripprefix
       - traefik.http.middlewares.admin-stripprefix.stripprefix.prefixes=/api
+    deploy:
+      replicas: 3
 
   reverse-proxy:
     image: traefik:v2.9
@@ -29,3 +35,14 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
+  portainer:
+    image: portainer/portainer-ce:latest
+    container_name: portainer
+    restart: unless-stopped
+    command: --admin-password 'A2EHkP$2YSb#*z'
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    ports:
+      - 9000:9000 
+      
