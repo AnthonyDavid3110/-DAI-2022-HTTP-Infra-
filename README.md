@@ -3,10 +3,6 @@ Auteurs : Anthony David, Stéphane Nascimento Santos
 
 Date : 19.01.2022
 
-# Table des matière
-
-[TOC]
-
 # 1. Introduction
 Dans ce laboratoire, nous allons nous familiariser avec les outils logiciels qui nous permettront de construire une infrastructure web complète. Nous allons configurer un serveur Web et un reverse-proxy pour servir du contenu statique et dynamique aux navigateurs web. 
 
