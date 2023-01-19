@@ -1,6 +1,10 @@
 # Rapport laboratoire 4 - SMTP
 Auteurs : Anthony David, Stéphane Nascimento Santos
 
+Professeur : Jürgen Ehrensberger 
+
+Assistant : Raphaël Racine
+
 Date : 19.01.2022
 
 # 1. Introduction
@@ -214,7 +218,7 @@ Celui-ci offire sur une interface graphique bon nombre de fonctionnalités pour 
 - gestion de templates
 - gestion des images, des volumes, des réseaux, etc..
 
-Pour le mettre en place, nous avons simplement suivi le procédure dans la documentation et ajouté le servide dane le fichir ``docker-compose.yml`.
+Pour le mettre en place, nous avons simplement suivi le procédure dans la documentation et ajouté le servide dane le fichier ``docker-compose.yml`.
 
 # 4. Procédure de déploiement
 Cette section présente une brève procédure par étape du projet afin de pouvoir facilement déployer la solution sans connaissance préalable de l'implémentation du projet.
@@ -284,7 +288,7 @@ Pour se connecter sur Portainer:
 - password : `mot-de-passe`
 
 # 5. Conclusion
-Après avoir effectué ce laboratoire, nous nous sommes familiarisé avec des outils logiciels qui nous permettent de construire une infrastructure HTTP complète. Nous avons put mettre en pratique des concepts très théorique vus dans le cadre du cours DAI.
+Après avoir effectué ce laboratoire, nous nous sommes familiarisés avec des outils logiciels qui nous permettent de construire une infrastructure HTTP complète. Nous avons put mettre en pratique des concepts très théorique vus dans le cadre du cours DAI.
 
 De plus, il a été fort appréciable de travailler avec Docker et de continuer d'améliorer notre connaissance de cet outil.
 
