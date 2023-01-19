@@ -1,4 +1,4 @@
-# Rapport laboratoire 4 - SMTP
+# Rapport laboratoire 5 - Infrastructure HTTP
 Auteurs : Anthony David, Stéphane Nascimento Santos
 
 Professeur : Jürgen Ehrensberger 
